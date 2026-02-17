@@ -5,6 +5,7 @@ using Il2CppBAPBAP.Items;
 using Il2CppBAPBAP.Local;
 using Il2CppInterop.Runtime.InteropTypes;
 using Il2CppInterop.Runtime.InteropTypes.Arrays;
+using UnityEngine.TextCore.Text;
 using static Il2CppBAPBAP.Entities.Augment.AugmentConfiguration;
 
 namespace BAPBAPBalanceMod
@@ -260,51 +261,51 @@ namespace BAPBAPBalanceMod
             
             // Health
             P_AugmentStats_SO hpStatAug = __instance.library.passives[(int)AugmentID.P_STAT_HP].Cast<P_AugmentStats_SO>();
-            hpStatAug.configuration.levelStats.levels = CreateLevelsForStatBuff(5, [new ItemStat(Stats.Hp, 350)], [new ItemStat(Stats.Hp, 350)]);
+            hpStatAug.configuration.levelStats.levels = CreateLevelsForStatBuff(2, [new ItemStat(Stats.Hp, 350)], [new ItemStat(Stats.Hp, 350)]);
 
             // Health (Minor)
             P_AugmentStats_SO hpStatMinorAug = __instance.library.passives[(int)AugmentID.P_STAT_MINOR_HP].Cast<P_AugmentStats_SO>();
-            hpStatMinorAug.configuration.levelStats.levels = CreateLevelsForStatBuff(5, [new ItemStat(Stats.Hp, 60)], [new ItemStat(Stats.Hp, 60)]);
+            hpStatMinorAug.configuration.levelStats.levels = CreateLevelsForStatBuff(10, [new ItemStat(Stats.Hp, 60)], [new ItemStat(Stats.Hp, 60)]);
 
             // Attack speed
             P_AugmentStats_SO atkSpeedStatAug = __instance.library.passives[(int)AugmentID.P_STAT_ATTACKSPEED].Cast<P_AugmentStats_SO>();
-            atkSpeedStatAug.configuration.levelStats.levels = CreateLevelsForStatBuff(20, [new ItemStat(Stats.AtkSpeed, 0.4f)], [new ItemStat(Stats.AtkSpeed, 0.4f)]);
+            atkSpeedStatAug.configuration.levelStats.levels = CreateLevelsForStatBuff(3, [new ItemStat(Stats.AtkSpeed, 0.4f)], [new ItemStat(Stats.AtkSpeed, 0.4f)]);
 
             // Attack speed (Minor)
             P_AugmentStats_SO atkSpeedStatMinorAug = __instance.library.passives[(int)AugmentID.P_STAT_MINOR_ATTACKSPEED].Cast<P_AugmentStats_SO>();
-            atkSpeedStatMinorAug.configuration.levelStats.levels = CreateLevelsForStatBuff(5, [new ItemStat(Stats.AtkSpeed, 0.07f)], [new ItemStat(Stats.AtkSpeed, 0.07f)]);
+            atkSpeedStatMinorAug.configuration.levelStats.levels = CreateLevelsForStatBuff(10, [new ItemStat(Stats.AtkSpeed, 0.07f)], [new ItemStat(Stats.AtkSpeed, 0.07f)]);
 
             // Damage
             P_AugmentStats_SO dmgStatAug = __instance.library.passives[(int)AugmentID.P_STAT_DAMAGE].Cast<P_AugmentStats_SO>();
-            dmgStatAug.configuration.levelStats.levels = CreateLevelsForStatBuff(5, [new ItemStat(Stats.Dmg, 60)], [new ItemStat(Stats.Dmg, 60)]);
+            dmgStatAug.configuration.levelStats.levels = CreateLevelsForStatBuff(2, [new ItemStat(Stats.Dmg, 60)], [new ItemStat(Stats.Dmg, 60)]);
 
             // Damage (Minor)
             P_AugmentStats_SO dmgStatMinorAug = __instance.library.passives[(int)AugmentID.P_STAT_MINOR_DAMAGE].Cast<P_AugmentStats_SO>();
-            dmgStatMinorAug.configuration.levelStats.levels = CreateLevelsForStatBuff(5, [new ItemStat(Stats.Dmg, 15)], [new ItemStat(Stats.Dmg, 15)]);
+            dmgStatMinorAug.configuration.levelStats.levels = CreateLevelsForStatBuff(10, [new ItemStat(Stats.Dmg, 15)], [new ItemStat(Stats.Dmg, 15)]);
 
             // Cooldown Reduction
             P_AugmentStats_SO cdrAug = __instance.library.passives[(int)AugmentID.P_STAT_CDR].Cast<P_AugmentStats_SO>();
-            cdrAug.configuration.levelStats.levels = CreateLevelsForStatBuff(5, [new ItemStat(Stats.CooldownReduction, 0.6f)], [new ItemStat(Stats.CooldownReduction, 0.4f)]);
+            cdrAug.configuration.levelStats.levels = CreateLevelsForStatBuff(1, [new ItemStat(Stats.CooldownReduction, 0.6f)], [new ItemStat(Stats.CooldownReduction, 0.4f)]);
 
             // Crit chance
             P_AugmentStats_SO critChanceAug = __instance.library.passives[(int)AugmentID.P_STAT_CRITCHANCE].Cast<P_AugmentStats_SO>();
-            critChanceAug.configuration.levelStats.levels = CreateLevelsForStatBuff(5, [new ItemStat(Stats.CritChance, 0.35f)], [new ItemStat(Stats.CritChance, 0.35f)]);
+            critChanceAug.configuration.levelStats.levels = CreateLevelsForStatBuff(1, [new ItemStat(Stats.CritChance, 0.35f)], [new ItemStat(Stats.CritChance, 0.35f)]);
 
             // Crit damage
             P_AugmentStats_SO critDmgAug = __instance.library.passives[(int)AugmentID.P_STAT_CRITDAMAGE].Cast<P_AugmentStats_SO>();
-            critDmgAug.configuration.levelStats.levels = CreateLevelsForStatBuff(5, [new ItemStat(Il2CppBAPBAP.Items.Stats.CritChance, 0.15f), new ItemStat(Stats.CritDmg, 0.35f)], [new ItemStat(Stats.CritChance, 0.15f), new ItemStat(Stats.CritDmg, 0.35f)]);
+            critDmgAug.configuration.levelStats.levels = CreateLevelsForStatBuff(2, [new ItemStat(Il2CppBAPBAP.Items.Stats.CritChance, 0.15f), new ItemStat(Stats.CritDmg, 0.35f)], [new ItemStat(Stats.CritChance, 0.15f), new ItemStat(Stats.CritDmg, 0.35f)]);
 
             // Damage reduction (unused?)
             P_AugmentStats_SO dmgRedAug = __instance.library.passives[(int)AugmentID.P_STAT_DAMAGEREDUCTION].Cast<P_AugmentStats_SO>();
-            dmgRedAug.configuration.levelStats.levels = CreateLevelsForStatBuff(5, [new ItemStat(Il2CppBAPBAP.Items.Stats.Defense, 0.06f)], [new ItemStat(Stats.Defense, 0.05f)]);
+            dmgRedAug.configuration.levelStats.levels = CreateLevelsForStatBuff(3, [new ItemStat(Il2CppBAPBAP.Items.Stats.Defense, 0.06f)], [new ItemStat(Stats.Defense, 0.05f)]);
 
             // Lifesteal
             P_AugmentStats_SO lifestealAug = __instance.library.passives[(int)AugmentID.P_STAT_LIFESTEAL].Cast<P_AugmentStats_SO>();
-            lifestealAug.configuration.levelStats.levels = CreateLevelsForStatBuff(5, [new ItemStat(Il2CppBAPBAP.Items.Stats.Lifesteal, 0.25f)], [new ItemStat(Stats.Lifesteal, 0.20f)]);
+            lifestealAug.configuration.levelStats.levels = CreateLevelsForStatBuff(2, [new ItemStat(Il2CppBAPBAP.Items.Stats.Lifesteal, 0.25f)], [new ItemStat(Stats.Lifesteal, 0.20f)]);
 
             // Movespeed
             P_AugmentStats_SO movespeedAug = __instance.library.passives[(int)AugmentID.P_STAT_MOVESPEED].Cast<P_AugmentStats_SO>();
-            movespeedAug.configuration.levelStats.levels = CreateLevelsForStatBuff(5, [new ItemStat(Il2CppBAPBAP.Items.Stats.MoveSpeed, 0.40f)], [new ItemStat(Stats.MoveSpeed, 0.30f)]);
+            movespeedAug.configuration.levelStats.levels = CreateLevelsForStatBuff(1, [new ItemStat(Il2CppBAPBAP.Items.Stats.MoveSpeed, 0.40f)], [new ItemStat(Stats.MoveSpeed, 0.30f)]);
 
 
             /* 
@@ -523,30 +524,30 @@ namespace BAPBAPBalanceMod
 
             if (characterId == CharacterID.KITSU)
             {
-                hurtbox.baseHp = BalanceConfig.get<int>("Character_Kitsu", "BaseHp");
-                movement.baseWalkSpeed = BalanceConfig.get<float>("Character_Kitsu", "WalkSpeed");
-                movement.baseRunSpeed = BalanceConfig.get<float>("Character_Kitsu", "RunSpeed");
+                hurtbox.baseHp = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Kitsu", "BaseHp");
+                movement.baseWalkSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu", "WalkSpeed");
+                movement.baseRunSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu", "RunSpeed");
 
                 ArrowAbility kitsuBasicAbility = __instance.abilities[0].Cast<ArrowAbility>();
                 ChargedArrowsAbility kitsuSpecialAbility = __instance.abilities[1].Cast<ChargedArrowsAbility>();
                 RecoilArrowAbility kitsuTacticalAbility = __instance.abilities[2].Cast<RecoilArrowAbility>();
                 ArrowMissileAbility kitsuUltimateAbility = __instance.abilities[3].Cast<ArrowMissileAbility>();
 
-                kitsuBasicAbility.baseCooldownTime = BalanceConfig.get<float>("Character_Kitsu_Basic", "Cooldown");
-                kitsuBasicAbility.castingTime = BalanceConfig.get<float>("Character_Kitsu_Basic", "CastTime");
-                kitsuBasicAbility.damage = BalanceConfig.get<int>("Character_Kitsu_Basic", "Damage");
-                kitsuBasicAbility.damageScaling = BalanceConfig.get<float>("Character_Kitsu_Basic", "DamageScaling");
-                kitsuBasicAbility.enableCritDmg = BalanceConfig.get<bool>("Character_Kitsu_Basic", "EnableCrits");
-                kitsuBasicAbility.speed = BalanceConfig.get<float>("Character_Kitsu_Basic", "Speed");
-                kitsuBasicAbility.ttl = BalanceConfig.get<float>("Character_Kitsu_Basic", "Duration");
+                kitsuBasicAbility.baseCooldownTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu_Basic", "Cooldown");
+                kitsuBasicAbility.castingTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu_Basic", "CastTime");
+                kitsuBasicAbility.damage = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Kitsu_Basic", "Damage");
+                kitsuBasicAbility.damageScaling = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu_Basic", "DamageScaling");
+                kitsuBasicAbility.enableCritDmg = BalanceConfig.get<bool>(BalanceConfig.CHARACTERS, "Character_Kitsu_Basic", "EnableCrits");
+                kitsuBasicAbility.speed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu_Basic", "Speed");
+                kitsuBasicAbility.ttl = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu_Basic", "Duration");
 
-                kitsuSpecialAbility.baseCooldownTime = BalanceConfig.get<float>("Character_Kitsu_Special", "Cooldown");
-                kitsuSpecialAbility.castingTime = BalanceConfig.get<float>("Character_Kitsu_Special", "CastTime");
-                kitsuSpecialAbility.damage = BalanceConfig.get<int>("Character_Kitsu_Special", "Damage");
-                kitsuSpecialAbility.damageRate = BalanceConfig.get<float>("Character_Kitsu_Special", "DamageRate");
-                kitsuSpecialAbility.damageScaling = BalanceConfig.get<float>("Character_Kitsu_Special", "DamageScaling");
-                kitsuSpecialAbility.enableCritDmg = BalanceConfig.get<bool>("Character_Kitsu_Special", "EnableCrits");
-                kitsuSpecialAbility.ttl = BalanceConfig.get<float>("Character_Kitsu_Special", "Duration");
+                kitsuSpecialAbility.baseCooldownTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu_Special", "Cooldown");
+                kitsuSpecialAbility.castingTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu_Special", "CastTime");
+                kitsuSpecialAbility.damage = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Kitsu_Special", "Damage");
+                kitsuSpecialAbility.damageRate = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu_Special", "DamageRate");
+                kitsuSpecialAbility.damageScaling = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu_Special", "DamageScaling");
+                kitsuSpecialAbility.enableCritDmg = BalanceConfig.get<bool>(BalanceConfig.CHARACTERS, "Character_Kitsu_Special", "EnableCrits");
+                kitsuSpecialAbility.ttl = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu_Special", "Duration");
                 // Modifying area of effect does not change the indicator. I don't know how to fix that yet.
                 //kitsuSpecialAbility.indicatorBaseHalfScale = new Vector2(Configuration.BALANCE_CHARACTER_KITSU_SPECIAL_ABILITY_RADIUS.Value, Configuration.BALANCE_CHARACTER_KITSU_SPECIAL_ABILITY_RADIUS.Value);
                 //kitsuSpecialAbility.indicatorHalfScale = new Vector2(Configuration.BALANCE_CHARACTER_KITSU_SPECIAL_HITBOX_RADIUS.Value, Configuration.BALANCE_CHARACTER_KITSU_SPECIAL_HITBOX_RADIUS.Value);
@@ -555,92 +556,136 @@ namespace BAPBAPBalanceMod
                 //kitsuSpecialAbility.indicatorMaxDistance = Configuration.BALANCE_CHARACTER_KITSU_SPECIAL_ABILITY_RADIUS.Value;
                 //kitsuSpecialAbility.abilityRadius = Configuration.BALANCE_CHARACTER_KITSU_SPECIAL_ABILITY_RADIUS.Value;
 
-                kitsuTacticalAbility.baseCooldownTime = BalanceConfig.get<float>("Character_Kitsu_Tactical", "Cooldown");
-                kitsuTacticalAbility.castingTime = BalanceConfig.get<float>("Character_Kitsu_Tactical", "CastTime");
-                kitsuTacticalAbility.damage = BalanceConfig.get<int>("Character_Kitsu_Tactical", "Damage");
-                kitsuTacticalAbility.damageScaling = BalanceConfig.get<float>("Character_Kitsu_Tactical", "DamageScaling");
-                kitsuTacticalAbility.enableCritDmg = BalanceConfig.get<bool>("Character_Kitsu_Tactical", "EnableCrits");
-                kitsuTacticalAbility.hitboxRadius = BalanceConfig.get<float>("Character_Kitsu_Tactical", "AreaOfEffectRadius");
-                kitsuTacticalAbility.jumpDistance = BalanceConfig.get<float>("Character_Kitsu_Tactical", "JumpDistance");
+                kitsuTacticalAbility.baseCooldownTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu_Tactical", "Cooldown");
+                kitsuTacticalAbility.castingTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu_Tactical", "CastTime");
+                kitsuTacticalAbility.damage = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Kitsu_Tactical", "Damage");
+                kitsuTacticalAbility.damageScaling = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu_Tactical", "DamageScaling");
+                kitsuTacticalAbility.enableCritDmg = BalanceConfig.get<bool>(BalanceConfig.CHARACTERS, "Character_Kitsu_Tactical", "EnableCrits");
+                kitsuTacticalAbility.hitboxRadius = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu_Tactical", "AreaOfEffectRadius");
+                kitsuTacticalAbility.jumpDistance = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu_Tactical", "JumpDistance");
 
-                kitsuUltimateAbility.baseCooldownTime = BalanceConfig.get<float>("Character_Kitsu_Ultimate", "Cooldown");
-                kitsuUltimateAbility.castingTime = BalanceConfig.get<float>("Character_Kitsu_Ultimate", "CastTime"); //TODO I don't think this works?
-                kitsuUltimateAbility.damage = BalanceConfig.get<int>("Character_Kitsu_Ultimate", "Damage");
-                kitsuUltimateAbility.damageScaling = BalanceConfig.get<float>("Character_Kitsu_Ultimate", "DamageScaling");
-                kitsuUltimateAbility.enableCritDmg = BalanceConfig.get<bool>("Character_Kitsu_Ultimate", "EnableCrits");
-                kitsuUltimateAbility.speed = BalanceConfig.get<float>("Character_Kitsu_Ultimate", "Speed");
-                kitsuUltimateAbility.ttl = BalanceConfig.get<float>("Character_Kitsu_Ultimate", "Duration");
+                kitsuUltimateAbility.baseCooldownTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu_Ultimate", "Cooldown");
+                kitsuUltimateAbility.castingTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu_Ultimate", "CastTime"); //TODO I don't think this works?
+                kitsuUltimateAbility.damage = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Kitsu_Ultimate", "Damage");
+                kitsuUltimateAbility.damageScaling = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu_Ultimate", "DamageScaling");
+                kitsuUltimateAbility.enableCritDmg = BalanceConfig.get<bool>(BalanceConfig.CHARACTERS, "Character_Kitsu_Ultimate", "EnableCrits");
+                kitsuUltimateAbility.speed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu_Ultimate", "Speed");
+                kitsuUltimateAbility.ttl = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kitsu_Ultimate", "Duration");
             }
             else if (characterId == CharacterID.ANNA) 
             {
                 
-                hurtbox.baseHp = BalanceConfig.get<int>("Character_Anna", "BaseHp");
-                movement.baseWalkSpeed = BalanceConfig.get<float>("Character_Anna", "WalkSpeed");
-                movement.baseRunSpeed = BalanceConfig.get<float>("Character_Anna", "RunSpeed");
+                hurtbox.baseHp = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Anna", "BaseHp");
+                movement.baseWalkSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna", "WalkSpeed");
+                movement.baseRunSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna", "RunSpeed");
 
                 RunNGunAbility annaBasicAbility = __instance.abilities[0].Cast<RunNGunAbility>();
                 ShotgunAbility annaSpecialAbility = __instance.abilities[1].Cast<ShotgunAbility>();
                 DashAbility annaTacticalAbility = __instance.abilities[2].Cast<DashAbility>();
                 TornadoAbility annaUltimateAbility = __instance.abilities[3].Cast<TornadoAbility>();
 
-                annaBasicAbility.castingTime = BalanceConfig.get<float>("Character_Anna_Basic", "CastTime");
-                annaBasicAbility.baseCooldownTime = BalanceConfig.get<float>("Character_Anna_Basic", "Cooldown");
-                annaBasicAbility.damage = BalanceConfig.get<int>("Character_Anna_Basic", "Damage");
-                annaBasicAbility.damageScaling = BalanceConfig.get<float>("Character_Anna_Basic", "DamageScaling");
-                annaBasicAbility.enableCritDmg = BalanceConfig.get<bool>("Character_Anna_Basic", "EnableCrits");
-                annaBasicAbility.maxBullets = BalanceConfig.get<int>("Character_Anna_Basic", "MaxBullets");
-                annaBasicAbility.speed = BalanceConfig.get<float>("Character_Anna_Basic", "Speed");
-                annaBasicAbility.spread = BalanceConfig.get<float>("Character_Anna_Basic", "Spread");
-                annaBasicAbility.ttl = BalanceConfig.get<float>("Character_Anna_Basic", "Duration");
+                annaBasicAbility.castingTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Basic", "CastTime");
+                annaBasicAbility.baseCooldownTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Basic", "Cooldown");
+                annaBasicAbility.damage = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Anna_Basic", "Damage");
+                annaBasicAbility.damageScaling = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Basic", "DamageScaling");
+                annaBasicAbility.enableCritDmg = BalanceConfig.get<bool>(BalanceConfig.CHARACTERS, "Character_Anna_Basic", "EnableCrits");
+                annaBasicAbility.maxBullets = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Anna_Basic", "MaxBullets");
+                annaBasicAbility.speed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Basic", "Speed");
+                annaBasicAbility.spread = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Basic", "Spread");
+                annaBasicAbility.ttl = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Basic", "Duration");
 
-                annaSpecialAbility.castingTime = BalanceConfig.get<float>("Character_Anna_Special", "CastTime");
-                annaSpecialAbility.baseCooldownTime = BalanceConfig.get<float>("Character_Anna_Special", "Cooldown");
-                annaSpecialAbility.damage = BalanceConfig.get<int>("Character_Anna_Special", "Damage");
-                annaSpecialAbility.damageScaling = BalanceConfig.get<float>("Character_Anna_Special", "DamageScaling");
-                annaSpecialAbility.enableCritDmg = BalanceConfig.get<bool>("Character_Anna_Special", "EnableCrits");
-                annaSpecialAbility.bullets = BalanceConfig.get<int>("Character_Anna_Special", "Bullets");
-                annaSpecialAbility.speed = BalanceConfig.get<float>("Character_Anna_Special", "Speed");
-                annaSpecialAbility.angleSpread = BalanceConfig.get<float>("Character_Anna_Special", "Spread");
-                annaSpecialAbility.ttl = BalanceConfig.get<float>("Character_Anna_Special", "Duration");
+                annaSpecialAbility.castingTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Special", "CastTime");
+                annaSpecialAbility.baseCooldownTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Special", "Cooldown");
+                annaSpecialAbility.damage = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Anna_Special", "Damage");
+                annaSpecialAbility.damageScaling = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Special", "DamageScaling");
+                annaSpecialAbility.enableCritDmg = BalanceConfig.get<bool>(BalanceConfig.CHARACTERS, "Character_Anna_Special", "EnableCrits");
+                annaSpecialAbility.bullets = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Anna_Special", "Bullets");
+                annaSpecialAbility.speed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Special", "Speed");
+                annaSpecialAbility.angleSpread = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Special", "Spread");
+                annaSpecialAbility.ttl = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Special", "Duration");
 
-                annaTacticalAbility.castingTime = BalanceConfig.get<float>("Character_Anna_Tactical", "CastTime");
-                annaTacticalAbility.baseCooldownTime = BalanceConfig.get<float>("Character_Anna_Tactical", "Cooldown");
-                annaTacticalAbility.dashSpeed = BalanceConfig.get<float>("Character_Anna_Tactical", "DashSpeed");
-                annaTacticalAbility.dashTime = BalanceConfig.get<float>("Character_Anna_Tactical", "DashTime");
+                annaTacticalAbility.castingTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Tactical", "CastTime");
+                annaTacticalAbility.baseCooldownTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Tactical", "Cooldown");
+                annaTacticalAbility.dashSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Tactical", "DashSpeed");
+                annaTacticalAbility.dashTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Tactical", "DashTime");
 
-                annaUltimateAbility.castingTime = BalanceConfig.get<float>("Character_Anna_Ultimate", "CastTime");
-                annaUltimateAbility.baseCooldownTime = BalanceConfig.get<float>("Character_Anna_Ultimate", "Cooldown");
-                annaUltimateAbility.damage = BalanceConfig.get<int>("Character_Anna_Ultimate", "Damage");
-                annaUltimateAbility.damageScaling = BalanceConfig.get<float>("Character_Anna_Ultimate", "DamageScaling");
-                annaUltimateAbility.enableCritDmg = BalanceConfig.get<bool>("Character_Anna_Ultimate", "EnableCrits");
-                annaUltimateAbility.damageRate = BalanceConfig.get<float>("Character_Anna_Ultimate", "DamageRate");
-                annaUltimateAbility.areaRadius = BalanceConfig.get<float>("Character_Anna_Ultimate", "AreaOfEffectRadius");
-                annaUltimateAbility.tornadoTime = BalanceConfig.get<float>("Character_Anna_Ultimate", "Duration");
+                annaUltimateAbility.castingTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Ultimate", "CastTime");
+                annaUltimateAbility.baseCooldownTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Ultimate", "Cooldown");
+                annaUltimateAbility.damage = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Anna_Ultimate", "Damage");
+                annaUltimateAbility.damageScaling = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Ultimate", "DamageScaling");
+                annaUltimateAbility.enableCritDmg = BalanceConfig.get<bool>(BalanceConfig.CHARACTERS, "Character_Anna_Ultimate", "EnableCrits");
+                annaUltimateAbility.damageRate = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Ultimate", "DamageRate");
+                annaUltimateAbility.areaRadius = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Ultimate", "AreaOfEffectRadius");
+                annaUltimateAbility.tornadoTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Anna_Ultimate", "Duration");
 
-                Core.Log.Msg($"hp={hurtbox.baseHp}, walk={movement.baseWalkSpeed}, run={movement.baseRunSpeed}");
-
-                Core.Log.Msg($"Basic ability dmg={annaBasicAbility.damage},dmgscale={annaBasicAbility.damageScaling},cooldown={annaBasicAbility.baseCooldownTime},casttime={annaBasicAbility.castingTime},maxBullets={annaBasicAbility.maxBullets},speed={annaBasicAbility.speed},spread={annaBasicAbility.spread},ttl={annaBasicAbility.ttl},");
-                Core.Log.Msg($"special ability dmg={annaSpecialAbility.damage},dmgscale={annaSpecialAbility.damageScaling},cooldown={annaSpecialAbility.baseCooldownTime},casttime={annaSpecialAbility.castingTime},angleSpread={annaSpecialAbility.angleSpread},speed={annaSpecialAbility.speed},bullet={annaSpecialAbility.bullets},ttl={annaSpecialAbility.ttl}");
-                Core.Log.Msg($"Tactical ability dashDecel={annaTacticalAbility.dashDecel}, dashTime={annaTacticalAbility.dashTime},cooldown={annaTacticalAbility.baseCooldownTime},casttime={annaTacticalAbility.castingTime},dashSpeed={annaTacticalAbility.dashSpeed}");
-                Core.Log.Msg($"Ultimate ability dmg={annaUltimateAbility.damage},dmgscale={annaUltimateAbility.damageScaling},cooldown={annaUltimateAbility.baseCooldownTime},casttime={annaUltimateAbility.castingTime},areaRaadius={annaUltimateAbility.areaRadius},dmgRate={annaUltimateAbility.damageRate},tornadoTime={annaUltimateAbility.tornadoTime}");
-            }
+             }
             else if (characterId == CharacterID.CHUCK)
             {
-                hurtbox.baseHp = BalanceConfig.get<int>("Character_Chuck", "BaseHp");
-                movement.baseWalkSpeed = BalanceConfig.get<float>("Character_Chuck", "WalkSpeed");
-                movement.baseRunSpeed = BalanceConfig.get<float>("Character_Chuck", "RunSpeed");
+                
+                hurtbox.baseHp = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Chuck", "BaseHp");
+                movement.baseWalkSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck", "WalkSpeed");
+                movement.baseRunSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck", "RunSpeed");
 
                 PunchSequenceAbility chuckBasicAbility = __instance.abilities[0].Cast<PunchSequenceAbility>();
                 HeavyPunchAbility chuckSpecialAbility = __instance.abilities[1].Cast<HeavyPunchAbility>();
                 JumpPoundAbility chuckTacticalAbility = __instance.abilities[2].Cast<JumpPoundAbility>();
                 RageAbility chuckUltimateAbility = __instance.abilities[3].Cast<RageAbility>();
 
+
+                // Cooldown and cast time does not seem to do anything
+                //chuckBasicAbility.baseCooldownTime = BalanceConfig.get<float>("Character_Chuck_Basic", "Cooldown");
+                chuckBasicAbility.damage1 = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Chuck_Basic", "Damage1");
+                chuckBasicAbility.damage2 = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Chuck_Basic", "Damage2");
+                chuckBasicAbility.damage3 = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Chuck_Basic", "Damage3");
+                chuckBasicAbility.damage1Scaling = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Basic", "DamageScaling1");
+                chuckBasicAbility.damage2Scaling = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Basic", "DamageScaling2");
+                chuckBasicAbility.damage3Scaling = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Basic", "DamageScaling3");
+                chuckBasicAbility.enableCritDmg = BalanceConfig.get<bool>(BalanceConfig.CHARACTERS, "Character_Chuck_Basic", "EnableCrits");
+
+                chuckSpecialAbility.castingTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Special", "CastTime");
+                chuckSpecialAbility.baseCooldownTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Special", "Cooldown");
+                chuckSpecialAbility.damage = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Chuck_Special", "Damage");
+                //chuckSpecialAbility.damagePerStack = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Chuck_Special", "DamagePerStack");
+                //chuckSpecialAbility.damagePerStackScaling = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Special", "DamagePerStackScaling");
+                chuckSpecialAbility.damageScaling = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Special", "DamageScaling"); ;
+                chuckSpecialAbility.enableCritDmg = BalanceConfig.get<bool>(BalanceConfig.CHARACTERS, "Character_Chuck_Special", "EnableCrits");
+                chuckSpecialAbility.maxStacks = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Chuck_Special", "MaxStacks");
+                chuckSpecialAbility.slowDuration = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Special", "SlowDuration");
+                chuckSpecialAbility.slowPerStack = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Special", "SlowAmountPerStack");
+
+                // The visual indicator doesn't match the hitboxRadius
+                chuckTacticalAbility.hitboxRadius = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Tactical", "AreaOfEffectRadius");
+                chuckTacticalAbility.castingTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Tactical", "CastTime");
+                chuckTacticalAbility.baseCooldownTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Tactical", "Cooldown");
+                chuckTacticalAbility.damage = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Chuck_Tactical", "Damage");
+                chuckTacticalAbility.damageScaling = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Tactical", "DamageScaling");
+                chuckTacticalAbility.maxJumpDistance = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Tactical", "Distance");
+                chuckTacticalAbility.rageMaxJumpDistance = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Tactical", "UltimateDistance");
+                chuckTacticalAbility.rageHitboxRadiusIncrease = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Tactical", "UltimateAreaOfEffectRadiusIncrease");;
+                chuckTacticalAbility.enableCritDmg = BalanceConfig.get<bool>(BalanceConfig.CHARACTERS, "Character_Chuck_Tactical", "EnableCrits"); ;
+
+                chuckUltimateAbility.castingTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Ultimate", "CastTime");
+                chuckUltimateAbility.baseCooldownTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Ultimate", "Cooldown"); ;
+                chuckUltimateAbility.rageDmgPercentIncrease = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Ultimate", "DamagePercentIncrease"); ;
+                chuckUltimateAbility.rageDmgReduction = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Ultimate", "PercentDamageReduction"); ;
+                chuckUltimateAbility.rageHpRegenPercent = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Ultimate", "HpRegenPercent"); ;
+                chuckUltimateAbility.rageSpeedIncrease = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Ultimate", "MovementSpeedIncrease"); ;
+                chuckUltimateAbility.rageTime = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Chuck_Ultimate", "Duration"); ;
+                /*
+                Core.Log.Msg($"hp={hurtbox.baseHp}, walk={movement.baseWalkSpeed}, run={movement.baseRunSpeed}");
+                
+                Core.Log.Msg($"Basic ability castTime1={chuckBasicAbility.castingTime1},castTime2={chuckBasicAbility.castingTime2},castTime3={chuckBasicAbility.castingTime3},cooldown={chuckBasicAbility.baseCooldownTime},comboResetTime={chuckBasicAbility.comboResetTime},cooldown1={chuckBasicAbility.cooldownTime1},cooldown2={chuckBasicAbility.cooldownTime2},dmg1={chuckBasicAbility.damage1},dmg1Scaling={chuckBasicAbility.damage1Scaling},dmg2={chuckBasicAbility.damage2},dmg2Scaling={chuckBasicAbility.damage2Scaling},dmg3={chuckBasicAbility.damage3},dmg3Scaling={chuckBasicAbility.damage3Scaling},ttl1={chuckBasicAbility.ttl1},ttl2={chuckBasicAbility.ttl2},ttl3={chuckBasicAbility.ttl3}");
+                Core.Log.Msg($"special ability dmg={chuckSpecialAbility.damage},dmgscale={chuckSpecialAbility.damageScaling},cooldown={chuckSpecialAbility.baseCooldownTime},casttime={chuckSpecialAbility.castingTime},dmgPerStack={chuckSpecialAbility.damagePerStack},dmgPerStackScaling={chuckSpecialAbility.damagePerStackScaling},maxStacks={chuckSpecialAbility.maxStacks},slowDuration={chuckSpecialAbility.slowDuration},slowPerStack={chuckSpecialAbility.slowPerStack}");
+                Core.Log.Msg($"Tactical ability dmg={chuckTacticalAbility.damage}, dmgscale={chuckTacticalAbility.damageScaling},cooldown={chuckTacticalAbility.baseCooldownTime},casttime={chuckTacticalAbility.castingTime},hitboxRadius={chuckTacticalAbility.hitboxRadius}, jumpTime={chuckTacticalAbility.jumpTime},maxJumpDistance={chuckTacticalAbility.maxJumpDistance},rageHitboxRadiusIncrease={chuckTacticalAbility.rageHitboxRadiusIncrease}, rageMaxJumpdist={chuckTacticalAbility.rageMaxJumpDistance},ttl={chuckTacticalAbility.ttl},");
+                Core.Log.Msg($"Ultimate ability hpRegen={chuckUltimateAbility.hpRegenAmount},pushRadius={chuckUltimateAbility.pushRadius},rageDmgPercentIncrease={chuckUltimateAbility.rageDmgPercentIncrease},rageDmgReduct={chuckUltimateAbility.rageDmgReduction},rageHpRegenPercent={chuckUltimateAbility.rageHpRegenPercent},rageSpeed={chuckUltimateAbility.rageSpeedIncrease},rageTime={chuckUltimateAbility.rageTime},cooldown={chuckUltimateAbility.baseCooldownTime},castTime={chuckUltimateAbility.castingTime}");
+                */
+
             }
             else if (characterId == CharacterID.SASHIMI)
             {
-                hurtbox.baseHp = BalanceConfig.get<int>("Character_Sashimi", "BaseHp");
-                movement.baseWalkSpeed = BalanceConfig.get<float>("Character_Sashimi", "WalkSpeed");
-                movement.baseRunSpeed = BalanceConfig.get<float>("Character_Sashimi", "RunSpeed");
+                hurtbox.baseHp = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Sashimi", "BaseHp");
+                movement.baseWalkSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Sashimi", "WalkSpeed");
+                movement.baseRunSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Sashimi", "RunSpeed");
 
                 WidePunchAbility sashimiBasicAbility = __instance.abilities[0].Cast<WidePunchAbility>();
                 StunClapAbility sashimiSpecialAbility = __instance.abilities[1].Cast<StunClapAbility>();
@@ -650,9 +695,9 @@ namespace BAPBAPBalanceMod
             }
             else if (characterId == CharacterID.KIDDO)
             {
-                hurtbox.baseHp = BalanceConfig.get<int>("Character_Kiddo", "BaseHp");
-                movement.baseWalkSpeed = BalanceConfig.get<float>("Character_Kiddo", "WalkSpeed");
-                movement.baseRunSpeed = BalanceConfig.get<float>("Character_Kiddo", "RunSpeed");
+                hurtbox.baseHp = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Kiddo", "BaseHp");
+                movement.baseWalkSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kiddo", "WalkSpeed");
+                movement.baseRunSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kiddo", "RunSpeed");
 
                 FireAttackAbility kiddoBasicAbility = __instance.abilities[0].Cast<FireAttackAbility>();
                 FireStormAbility kiddoSpecialAbility = __instance.abilities[1].Cast<FireStormAbility>();
@@ -662,9 +707,9 @@ namespace BAPBAPBalanceMod
             }
             else if (characterId == CharacterID.ZOOK)
             {
-                hurtbox.baseHp = BalanceConfig.get<int>("Character_Zook", "BaseHp");
-                movement.baseWalkSpeed = BalanceConfig.get<float>("Character_Zook", "WalkSpeed");
-                movement.baseRunSpeed = BalanceConfig.get<float>("Character_Zook", "RunSpeed");
+                hurtbox.baseHp = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Zook", "BaseHp");
+                movement.baseWalkSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Zook", "WalkSpeed");
+                movement.baseRunSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Zook", "RunSpeed");
 
                 RocketAbility zookBasicAbility = __instance.abilities[0].Cast<RocketAbility>();
                 FollowRocketAbility zookSpecialAbility = __instance.abilities[1].Cast<FollowRocketAbility>();
@@ -674,9 +719,9 @@ namespace BAPBAPBalanceMod
             }
             else if (characterId == CharacterID.SKINNY)
             {
-                hurtbox.baseHp = BalanceConfig.get<int>("Character_Skinny", "BaseHp");
-                movement.baseWalkSpeed = BalanceConfig.get<float>("Character_Skinny", "WalkSpeed");
-                movement.baseRunSpeed = BalanceConfig.get<float>("Character_Skinny", "RunSpeed");
+                hurtbox.baseHp = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Skinny", "BaseHp");
+                movement.baseWalkSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Skinny", "WalkSpeed");
+                movement.baseRunSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Skinny", "RunSpeed");
 
                 AssassinMeleeAbility skinnyBasicAbility = __instance.abilities[0].Cast<AssassinMeleeAbility>();
                 AssassinScytheHeavyAbility skinnySpecialAbility = __instance.abilities[1].Cast<AssassinScytheHeavyAbility>();
@@ -686,9 +731,9 @@ namespace BAPBAPBalanceMod
             }
             else if (characterId == CharacterID.FROGGY)
             {
-                hurtbox.baseHp = BalanceConfig.get<int>("Character_Froggy", "BaseHp");
-                movement.baseWalkSpeed = BalanceConfig.get<float>("Character_Froggy", "WalkSpeed");
-                movement.baseRunSpeed = BalanceConfig.get<float>("Character_Froggy", "RunSpeed");
+                hurtbox.baseHp = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Froggy", "BaseHp");
+                movement.baseWalkSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Froggy", "WalkSpeed");
+                movement.baseRunSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Froggy", "RunSpeed");
 
                 FroggyMeleeAbility froggyBasicAbility = __instance.abilities[0].Cast<FroggyMeleeAbility>();
                 TongueJumpAbility froggySpecialAbility = __instance.abilities[1].Cast<TongueJumpAbility>();
@@ -698,9 +743,9 @@ namespace BAPBAPBalanceMod
             }
             else if (characterId == CharacterID.TEEVEE)
             {
-                hurtbox.baseHp = BalanceConfig.get<int>("Character_Teevee", "BaseHp");
-                movement.baseWalkSpeed = BalanceConfig.get<float>("Character_Teevee", "WalkSpeed");
-                movement.baseRunSpeed = BalanceConfig.get<float>("Character_Teevee", "RunSpeed");
+                hurtbox.baseHp = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Teevee", "BaseHp");
+                movement.baseWalkSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Teevee", "WalkSpeed");
+                movement.baseRunSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Teevee", "RunSpeed");
 
                 DigitalProjectileAbility teeveeBasicAbility = __instance.abilities[0].Cast<DigitalProjectileAbility>();
                 HeavyDigitalBeamAbility teeveeSpecialAbility = __instance.abilities[1].Cast<HeavyDigitalBeamAbility>();
@@ -711,9 +756,9 @@ namespace BAPBAPBalanceMod
             }
             else if (characterId == CharacterID.SOFIA)
             {
-                hurtbox.baseHp = BalanceConfig.get<int>("Character_Sofia", "BaseHp");
-                movement.baseWalkSpeed = BalanceConfig.get<float>("Character_Sofia", "WalkSpeed");
-                movement.baseRunSpeed = BalanceConfig.get<float>("Character_Sofia", "RunSpeed");
+                hurtbox.baseHp = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Sofia", "BaseHp");
+                movement.baseWalkSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Sofia", "WalkSpeed");
+                movement.baseRunSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Sofia", "RunSpeed");
 
                 KatanaMeleeAbility sofiaBasicAbility = __instance.abilities[0].Cast<KatanaMeleeAbility>();
                 ParryAbility sofiaSpecialAbility = __instance.abilities[1].Cast<ParryAbility>();
@@ -723,9 +768,9 @@ namespace BAPBAPBalanceMod
             }
             else if (characterId == CharacterID.JIRO)
             {
-                hurtbox.baseHp = BalanceConfig.get<int>("Character_Jiro", "BaseHp");
-                movement.baseWalkSpeed = BalanceConfig.get<float>("Character_Jiro", "WalkSpeed");
-                movement.baseRunSpeed = BalanceConfig.get<float>("Character_Jiro", "RunSpeed");
+                hurtbox.baseHp = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Jiro", "BaseHp");
+                movement.baseWalkSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Jiro", "WalkSpeed");
+                movement.baseRunSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Jiro", "RunSpeed");
 
                 JiroPunchAbility jiroBasicAbility = __instance.abilities[0].Cast<JiroPunchAbility>();
                 JiroJumpKickAbility jiroSpecialAbility = __instance.abilities[1].Cast<JiroJumpKickAbility>();
@@ -735,9 +780,9 @@ namespace BAPBAPBalanceMod
             }
             else if (characterId == CharacterID.BISHOP)
             {
-                hurtbox.baseHp = BalanceConfig.get<int>("Character_Bishop", "BaseHp");
-                movement.baseWalkSpeed = BalanceConfig.get<float>("Character_Bishop", "WalkSpeed");
-                movement.baseRunSpeed = BalanceConfig.get<float>("Character_Bishop", "RunSpeed");
+                hurtbox.baseHp = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Bishop", "BaseHp");
+                movement.baseWalkSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Bishop", "WalkSpeed");
+                movement.baseRunSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Bishop", "RunSpeed");
 
                 SpriestTetherAbility bishopBasicAbility = __instance.abilities[0].Cast<SpriestTetherAbility>();
                 SpriestSnareAbility bishopSpecialAbility = __instance.abilities[1].Cast<SpriestSnareAbility>();
@@ -747,9 +792,9 @@ namespace BAPBAPBalanceMod
             }
             else if (characterId == CharacterID.EVE)
             {
-                hurtbox.baseHp = BalanceConfig.get<int>("Character_Eve", "BaseHp");
-                movement.baseWalkSpeed = BalanceConfig.get<float>("Character_Eve", "WalkSpeed");
-                movement.baseRunSpeed = BalanceConfig.get<float>("Character_Eve", "RunSpeed");
+                hurtbox.baseHp = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Eve", "BaseHp");
+                movement.baseWalkSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Eve", "WalkSpeed");
+                movement.baseRunSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Eve", "RunSpeed");
 
                 EveShardAbility eveBasicAbility = __instance.abilities[0].Cast<EveShardAbility>();
                 EveSteadyShot eveSpecilAbility = __instance.abilities[1].Cast<EveSteadyShot>();
@@ -759,9 +804,9 @@ namespace BAPBAPBalanceMod
             }
             else if (characterId == CharacterID.KAT)
             {
-                hurtbox.baseHp = BalanceConfig.get<int>("Character_Kat", "BaseHp");
-                movement.baseWalkSpeed = BalanceConfig.get<float>("Character_Kat", "WalkSpeed");
-                movement.baseRunSpeed = BalanceConfig.get<float>("Character_Kat", "RunSpeed");
+                hurtbox.baseHp = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Kat", "BaseHp");
+                movement.baseWalkSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kat", "WalkSpeed");
+                movement.baseRunSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Kat", "RunSpeed");
 
                 CatThrowAbility katBasicAbility = __instance.abilities[0].Cast<CatThrowAbility>();
                 CatStompAbility katSpecialAbility = __instance.abilities[1].Cast<CatStompAbility>();
@@ -771,9 +816,9 @@ namespace BAPBAPBalanceMod
             }
             else if (characterId == CharacterID.ROCKY)
             {
-                hurtbox.baseHp = BalanceConfig.get<int>("Character_Chuck", "BaseHp");
-                movement.baseWalkSpeed = BalanceConfig.get<float>("Character_Chuck", "WalkSpeed");
-                movement.baseRunSpeed = BalanceConfig.get<float>("Character_Chuck", "RunSpeed");
+                hurtbox.baseHp = BalanceConfig.get<int>(BalanceConfig.CHARACTERS, "Character_Rocky", "BaseHp");
+                movement.baseWalkSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Rocky", "WalkSpeed");
+                movement.baseRunSpeed = BalanceConfig.get<float>(BalanceConfig.CHARACTERS, "Character_Rocky", "RunSpeed");
 
                 RockyPunchAbility rockyBasicAbility = __instance.abilities[0].Cast<RockyPunchAbility>();
                 RockyBoulderAbility rockySpecialAbility = __instance.abilities[1].Cast<RockyBoulderAbility>();
